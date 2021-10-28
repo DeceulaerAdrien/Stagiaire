@@ -5,7 +5,7 @@ const Client = new Discord.Client({
   intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES],
 });
 
-const Prefix = "!";
+const Prefix = "s-";
 
 Client.on("ready", () => {
   console.log("Stagiaire au rapport");
