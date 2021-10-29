@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "Start-Stagiaire": "nodemon index.js",
     "Deploy-Commands": "node deploy-commands.js"
   },
   "keywords": [],
