@@ -17,7 +17,16 @@ for (const file of commandFiles) {
   commands.push(command.data.toJSON());
 }
 
-rest
-  .put(Routes.applicationGuildCommands(clientId, guildId), { body: commands })
-  .then(() => console.log("Successfully registered application commands."))
-  .catch(console.error);
+(async () => {
+  try {
+    console.log("Started refreshing application (/) commands.");
+
+    await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+      body: commands,
+    });
+
+    console.log("Successfully reloaded application (/) commands.");
+  } catch (error) {
+    console.error(error);
+  }
+})();
