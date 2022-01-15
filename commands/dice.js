@@ -14,6 +14,7 @@ module.exports = {
     if (!interaction.isCommand()) return;
 
     if (interaction.commandName === "roll") {
+      await interaction.reply("Salut");
     }
   },
 };
