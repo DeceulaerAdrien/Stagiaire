@@ -1,5 +1,19 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 
+dice6 = () => {
+  min = Math.ceil(1);
+  max = Math.floor(6);
+  result = Math.floor(Math.random() * (max - min + 1)) + min;
+  return result;
+};
+
+dice20 = () => {
+  min = Math.ceil(1);
+  max = Math.floor(20);
+  result = Math.floor(Math.random() * (max - min + 1)) + min;
+  return result;
+};
+
 module.exports = {
   data: new SlashCommandBuilder()
     .setName(`r`)
@@ -15,15 +29,9 @@ module.exports = {
 
     if (interaction.commandName === "r") {
       if (interaction.options.getSubcommand() === "d6") {
-        min = Math.ceil(1);
-        max = Math.floor(6);
-        result = Math.floor(Math.random() * (max - min + 1)) + min;
-        await interaction.reply(`${result}`);
+        await interaction.reply(`${dice6()}`);
       } else if (interaction.options.getSubcommand() === "d20") {
-        min = Math.ceil(1);
-        max = Math.floor(20);
-        result = Math.floor(Math.random() * (max - min + 1)) + min;
-        await interaction.reply(`${result}`);
+        await interaction.reply(`${dice20()}`);
       }
     }
   },
